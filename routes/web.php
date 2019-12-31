@@ -22,3 +22,7 @@ Route::match(['get', 'post'], 'home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::match(['get', 'post'], 'post', 'PostController@index')->name('post');
+
+//for google OAUTH
+Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
+Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
