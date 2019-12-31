@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Socialite;
 
 class LoginController extends Controller
 {
@@ -39,12 +40,12 @@ class LoginController extends Controller
     }
 
     /**
-     * Redirect the user to the Google authentication page.
+     * Redirect the user to the provider authentication page.
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
+    public function redirectToProvider($driver)
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver($driver)->redirect();
     }
 }
