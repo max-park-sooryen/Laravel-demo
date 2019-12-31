@@ -114,4 +114,11 @@ return [
 
     'password_timeout' => 10800,
 
+    //for google OAUTH
+    'socialite' => [
+        'drivers' => [
+            'google',
+        ],
+    ],
+
 ];

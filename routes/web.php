@@ -23,6 +23,7 @@ Auth::routes();
 
 Route::match(['get', 'post'], 'post', 'PostController@index')->name('post');
 
-//for google OAUTH
-Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
-Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
+// for google OAUTH
+Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')
+    ->name('login.provider')
+    ->where('driver', implode('|', config('auth.socialite.drivers')));
