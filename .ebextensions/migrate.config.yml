@@ -2,4 +2,5 @@ container_commands:
     composer:
         command: export COMPOSER_HOME=/root && /usr/bin/composer.phar dump-autoload
     00-migration:
-        command: php /var/app/ondeck/artisan migrate
+        command: php /var/app/ondeck/artisan --env=staging cache:clear
+        command: php /var/app/ondeck/artisan --env=staging migrate
