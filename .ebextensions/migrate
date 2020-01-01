@@ -1,5 +1,5 @@
 container_commands:
-    02-migrate:
+    03-migrate:
         command: "php artisan migrate:refresh"
         leader_only: true
 
