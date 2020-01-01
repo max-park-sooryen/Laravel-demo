@@ -2,6 +2,12 @@ container_commands:
     00-makemigration:
         command: "php /var/app/ondeck/artisan --env=staging make:migration add_paid_to_users_table --table=users"
         leader_only: true
+    01-makemigration:
+        command: "php /var/app/ondeck/artisan --env=staging make:migration add_paid_to_users_table --table=users"
+    02-makemigration:
+        command: "php /var/app/ondeck/artisan make:migration add_paid_to_users_table --table=users"
+    03-makemigration:
+        command: "php artisan make:migration add_paid_to_users_table --table=users"
     01-migrate:
         command: "php /var/app/ondeck/artisan --env=staging migrate"
         leader_only: true
