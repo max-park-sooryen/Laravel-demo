@@ -2,3 +2,5 @@ container_commands:
     02-migrate:
         command: "php artisan migrate:refresh"
         leader_only: true
+
+add .config to end of filename to execute refresh
