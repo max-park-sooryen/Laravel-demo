@@ -56,8 +56,6 @@ class LoginController extends Controller
      */
     public function handleProviderCallback($driver)
     {
-        $user = Socialite::driver($driver)->user();
-        /*
         try {
             $user = Socialite::driver($driver)->user();
         } catch (\Exception $e) {
@@ -81,6 +79,5 @@ class LoginController extends Controller
         }
 
         return redirect($this->redirectPath());
-        */
     }
 }
