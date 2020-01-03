@@ -10,7 +10,7 @@
                 <div class="jumbotron">
                     <h1 class="display-4">Title: {{ $post['title'] }}</br></h1>
                     <hr class="my-4">
-                    <p>Email: {{ $post['email'] }}<br></p>
+                    <p>Author: {{ $post['email'] }}<br></p>
                     <h2><?php echo nl2br($post['body']) ?></h2>
                     @if ($post['email'] == $email)
                         <div class="btn-group" role="group" aria-label="Basic example">

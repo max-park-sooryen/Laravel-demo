@@ -24,14 +24,13 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
+     * Show the application dashboard and all posts.
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(Request $request)
     {
         $user = Auth::user();
-        $email = $user['email'];
+        $email = $user->email;
 
         //if post was created or edited
         if ($request->__isset('editOrNew')) {
