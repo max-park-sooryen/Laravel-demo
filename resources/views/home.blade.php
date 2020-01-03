@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <h1 class="display-4">Title: {{ $post['title'] }}</br></h1>
+                    <h1 class="display-4">{{ $post['title'] }}</br></h1>
                     <hr class="my-4">
                     <p>Author: {{ $post['email'] }}<br></p>
                     <h2><?php echo nl2br($post['body']) ?></h2>
