@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $userName = $user['name'];
+        $email = $user['email'];
 
         //if post was created or edited
         if ($request->__isset('editOrNew')) {
@@ -40,7 +40,7 @@ class HomeController extends Controller
             $body = $request->__get('body');
             // new post was created hence no postID in database yet
             if ($postID == -1) {
-                $insertData = ['title' => $title, 'body' => $body, 'username' => $userName];
+                $insertData = ['title' => $title, 'body' => $body, 'email' => $email];
                 $this->postRepo->create($insertData);
             }
             // edit post in database
@@ -58,7 +58,7 @@ class HomeController extends Controller
         $postsArr = $this->postRepo->all();
 
         //TODO: need to fix refresh adding new post if new post created
-        return view('home', ['posts' => $postsArr, 'username' => $userName]);
+        return view('home', ['posts' => $postsArr, 'email' => $email]);
     }
 
     

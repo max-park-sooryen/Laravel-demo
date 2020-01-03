@@ -10,9 +10,9 @@
                 <div class="jumbotron">
                     <h1 class="display-4">Title: {{ $post['title'] }}</br></h1>
                     <hr class="my-4">
-                    <p>Username: {{ $post['username'] }}<br></p>
+                    <p>Email: {{ $post['email'] }}<br></p>
                     <h2><?php echo nl2br($post['body']) ?></h2>
-                    @if ($post['username'] == $username)
+                    @if ($post['email'] == $email)
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <form action="{{ route('post') }}" method="POST">
                                 @csrf
